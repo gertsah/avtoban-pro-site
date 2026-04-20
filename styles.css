@@ -1185,6 +1185,165 @@ code {
   line-height: 1.5;
 }
 
+/* Original Avtoban color pass: redBlueTemplateTheme */
+body {
+  background: var(--silver);
+}
+
+.site-header {
+  color: var(--ink);
+  background: rgba(224, 224, 224, 0.96);
+  border-bottom: 4px solid var(--accent);
+  box-shadow: 0 10px 28px rgba(14, 51, 101, 0.14);
+}
+
+.site-header.is-scrolled {
+  background: rgba(224, 224, 224, 0.98);
+  box-shadow: 0 14px 34px rgba(14, 51, 101, 0.18);
+}
+
+.brand strong {
+  color: var(--dark);
+}
+
+.brand small {
+  color: #52616d;
+}
+
+.main-nav {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+
+.main-nav a {
+  color: #fff;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #fff;
+  background: var(--accent);
+}
+
+.icon-link {
+  color: var(--dark);
+  border-color: rgba(14, 51, 101, 0.28);
+  background: #fff;
+}
+
+.header-actions .button--accent {
+  background: var(--accent);
+}
+
+.hero {
+  border-bottom: 6px solid var(--accent);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  height: 6px;
+  background: var(--accent);
+}
+
+.hero__shade {
+  background:
+    linear-gradient(90deg, rgba(14, 51, 101, 0.9) 0%, rgba(14, 51, 101, 0.66) 36%, rgba(14, 51, 101, 0.05) 100%),
+    linear-gradient(0deg, rgba(14, 51, 101, 0.42), rgba(14, 51, 101, 0.08) 48%);
+}
+
+.vin-form {
+  background: rgba(14, 51, 101, 0.72);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.hero-panel {
+  background: rgba(14, 51, 101, 0.82);
+  border-top: 4px solid var(--accent);
+}
+
+.quick-strip {
+  background: var(--dark);
+  border-bottom-color: var(--accent);
+}
+
+.quick-strip a {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.quick-strip a:hover,
+.quick-strip a:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.catalog-panel,
+.catalog-toolbar,
+.product-card,
+.service-card,
+.review-card,
+.gallery-card,
+.admin-form,
+.admin-preview,
+.export-panel {
+  border-top: 4px solid var(--dark);
+}
+
+.catalog-panel {
+  box-shadow: 0 18px 48px rgba(14, 51, 101, 0.18);
+}
+
+.chip.is-active,
+.brand-pill.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.request-box,
+.button--dark,
+.section--flow,
+.contact-section {
+  background: var(--dark);
+}
+
+.section--services,
+.section--catalog,
+.section--reviews {
+  background: var(--silver);
+}
+
+.gallery-section {
+  background: #fff;
+  border-top: 6px solid var(--dark);
+  border-bottom: 6px solid var(--accent);
+}
+
+.product-card__category,
+.section-heading .eyebrow,
+.gallery-intro .eyebrow,
+.admin-hero .eyebrow,
+.export-panel .eyebrow {
+  color: var(--accent);
+}
+
+.stock-badge {
+  background: var(--dark);
+}
+
+.contact-card {
+  background: #113e7b;
+  border-top: 4px solid var(--accent);
+}
+
+.site-footer {
+  background: var(--dark);
+  border-top: 4px solid var(--accent);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
