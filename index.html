@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Автобан-Юг: автозапчасти, масла, автохимия и подбор деталей по VIN в Новороссийске."
+    />
+    <title>Автобан-Юг | Автозапчасти в Новороссийске</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Автобан-Юг, на главную">
+        <span class="brand__mark">AB</span>
+        <span>
+          <strong>Автобан-Юг</strong>
+          <small>Запчасти и автотовары</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#process">Подбор</a>
+        <a href="#gallery">Фото</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-link" href="tel:+79186459098" aria-label="Позвонить">Звонок</a>
+        <a
+          class="button button--accent"
+          href="https://wa.me/79186459098"
+          target="_blank"
+          rel="noreferrer"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Главный экран">
+        <div class="hero__media" id="heroTrack"></div>
+        <div class="hero__shade"></div>
+
+        <div class="hero__content">
+          <div class="hero__copy reveal">
+            <p class="eyebrow">Новороссийск, Пионерская 2д</p>
+            <h1>Автозапчасти, которые можно купить сегодня или быстро заказать</h1>
+            <p class="lead">
+              Подберем детали по VIN, найдем аналоги, соберем заказ для ремонта и
+              предупредим о сроках до оплаты.
+            </p>
+
+            <form class="vin-form" id="vinForm">
+              <label class="sr-only" for="vinInput">VIN, марка или название детали</label>
+              <input
+                id="vinInput"
+                name="vin"
+                type="text"
+                autocomplete="off"
+                placeholder="VIN, марка авто или деталь"
+              />
+              <button class="button button--accent" type="submit">Подобрать</button>
+            </form>
+
+            <div class="hero__actions">
+              <a class="button button--light" href="#catalog">Открыть каталог</a>
+              <a class="button button--ghost" href="#contacts">Как добраться</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal" aria-label="Короткая информация">
+            <div>
+              <span class="hero-panel__label">Сегодня</span>
+              <strong data-open-status>Проверяем график</strong>
+            </div>
+            <div>
+              <span class="hero-panel__label">В наличии</span>
+              <strong>масла, фильтры, тормоза, подвеска</strong>
+            </div>
+            <div>
+              <span class="hero-panel__label">Формат</span>
+              <strong>розница и опт, доставка по запросу</strong>
+            </div>
+          </aside>
+        </div>
+
+        <div class="hero-controls" aria-label="Слайды">
+          <button class="slider-arrow" type="button" data-hero-prev aria-label="Предыдущий слайд">
+            ‹
+          </button>
+          <div class="hero-dots" id="heroDots"></div>
+          <button class="slider-arrow" type="button" data-hero-next aria-label="Следующий слайд">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Быстрые разделы">
+        <div class="quick-strip__inner" id="quickCategories"></div>
+      </section>
+
+      <section class="section section--catalog" id="catalog">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Каталог из данных</p>
+          <h2>Карточки обновляются из одного файла, без правки верстки</h2>
+          <p>
+            Разделы, бренды, фото и статусы берутся из `data/catalog.js`.
+            Карточка сразу готова к заявке в WhatsApp.
+          </p>
+        </div>
+
+        <div class="catalog-layout">
+          <aside class="catalog-panel reveal">
+            <div class="field">
+              <label for="catalogSearch">Поиск</label>
+              <input id="catalogSearch" type="search" placeholder="фильтр, свечи, BMW..." />
+            </div>
+
+            <div class="field">
+              <span class="field__label">Категории</span>
+              <div class="chip-list" id="categoryFilters"></div>
+            </div>
+
+            <div class="field">
+              <span class="field__label">Популярные марки</span>
+              <div class="brand-cloud" id="brandCloud"></div>
+            </div>
+
+            <div class="request-box" aria-live="polite">
+              <span>Заявка</span>
+              <strong><span data-request-count>0</span> позиций</strong>
+              <button class="button button--dark" type="button" data-open-request>
+                Оформить
+              </button>
+            </div>
+          </aside>
+
+          <div class="catalog-main">
+            <div class="catalog-toolbar reveal">
+              <p><strong data-catalog-count>0</strong> позиций в подборке</p>
+              <label class="sort-control">
+                Сортировка
+                <select id="catalogSort">
+                  <option value="priority">Сначала популярное</option>
+                  <option value="stock">Сначала в наличии</option>
+                  <option value="name">По названию</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--flow" id="process">
+        <div class="flow-layout">
+          <div class="flow-copy reveal">
+            <p class="eyebrow">Как работает подбор</p>
+            <h2>Sticky-сценарий для заказа: меньше звонков впустую, больше понятных статусов</h2>
+            <p>
+              Блок остается рядом во время прокрутки, а этапы оживают по мере движения
+              страницы. Такой сценарий хорошо объясняет сервис без перегруза.
+            </p>
+          </div>
+
+          <div class="flow-steps" id="flowSteps"></div>
+        </div>
+      </section>
+
+      <section class="section section--services" id="services">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Что продаем</p>
+          <h2>Разделы для розницы, опта и быстрой выдачи</h2>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="gallery-track">
+          <div class="gallery-intro reveal">
+            <p class="eyebrow">Фото-шаблоны</p>
+            <h2>Куда загрузить реальные фото магазина</h2>
+            <p>
+              Сейчас стоят аккуратные временные изображения. Замените файлы в папках
+              `assets/img` и `assets/catalog`, имена уже подписаны в карточках.
+            </p>
+          </div>
+          <div class="gallery-cards" id="galleryCards"></div>
+        </div>
+      </section>
+
+      <section class="section section--reviews">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Репутация</p>
+          <h2>Клиенты отмечают наличие, цены и скорость заказа</h2>
+        </div>
+        <div class="review-grid" id="reviewGrid"></div>
+      </section>
+
+      <section class="contact-section" id="contacts">
+        <div class="contact-card reveal">
+          <p class="eyebrow">Контакты</p>
+          <h2>Автобан-Юг, Новороссийск</h2>
+          <div class="contact-list" id="contactList"></div>
+          <div class="contact-actions">
+            <a class="button button--accent" href="tel:+79186459098">Позвонить</a>
+            <a
+              class="button button--dark"
+              href="https://wa.me/79186459098"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="map-card reveal" aria-label="Карта">
+          <iframe
+            title="Автобан-Юг на карте"
+            src="https://yandex.ru/map-widget/v1/?ll=37.783001%2C44.692404&z=16&text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%2C%20%D0%9F%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F%202%D0%B4"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <div class="request-drawer" data-request-drawer aria-hidden="true">
+      <div class="request-drawer__panel" role="dialog" aria-modal="true" aria-label="Заявка">
+        <button class="close-button" type="button" data-close-request aria-label="Закрыть">×</button>
+        <p class="eyebrow">Заявка</p>
+        <h2>Позиции для подбора</h2>
+        <div class="request-items" data-request-items></div>
+        <form class="request-form" id="requestForm">
+          <label>
+            Ваше имя
+            <input name="name" type="text" placeholder="Например, Андрей" />
+          </label>
+          <label>
+            Телефон
+            <input name="phone" type="tel" placeholder="+7..." />
+          </label>
+          <label>
+            Автомобиль / VIN
+            <textarea name="car" rows="3" placeholder="Марка, модель, год, VIN"></textarea>
+          </label>
+          <button class="button button--accent" type="submit">Отправить в WhatsApp</button>
+        </form>
+      </div>
+    </div>
+
+    <dialog class="product-dialog" id="productDialog">
+      <button class="close-button" type="button" data-close-dialog aria-label="Закрыть">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <template id="productTemplate">
+      <article class="product-card reveal">
+        <button class="product-card__image" type="button" data-open-product>
+          <img loading="lazy" alt="" />
+          <span class="stock-badge"></span>
+        </button>
+        <div class="product-card__body">
+          <p class="product-card__category"></p>
+          <h3></h3>
+          <p class="product-card__text"></p>
+          <div class="tag-row"></div>
+          <div class="product-card__footer">
+            <strong class="price-label"></strong>
+            <button class="button button--dark" type="button" data-add-request>
+              В заявку
+            </button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <footer class="site-footer">
+      <p>Автобан-Юг. Новый статический сайт, каталог из `data/catalog.js`.</p>
+      <a href="admin.html">Редактор каталога</a>
+    </footer>
+
+    <script src="data/catalog.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
