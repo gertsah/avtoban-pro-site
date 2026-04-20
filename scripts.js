@@ -87,7 +87,7 @@
 
     const brands = document.getElementById("brandCloud");
     brands.innerHTML = "";
-    data.brands.slice(0, 16).forEach((brand) => {
+    data.brands.forEach((brand) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = `brand-pill ${state.brand === brand ? "is-active" : ""}`;
@@ -98,6 +98,29 @@
         renderFilters();
       });
       brands.appendChild(button);
+    });
+    renderMakeGrid();
+  };
+
+  const renderMakeGrid = () => {
+    const grid = document.getElementById("makeGrid");
+    if (!grid || !data.carMakes) return;
+    grid.innerHTML = "";
+    data.carMakes.forEach((make) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `make-card ${state.brand === make.name ? "is-active" : ""}`;
+      button.innerHTML = `
+        <img src="${make.logo}" alt="${make.name}" loading="lazy" />
+        <span>${make.name}</span>
+      `;
+      button.addEventListener("click", () => {
+        state.brand = state.brand === make.name ? "" : make.name;
+        renderFilters();
+        renderCatalog();
+        document.getElementById("productGrid").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      grid.appendChild(button);
     });
   };
 
@@ -115,7 +138,8 @@
     );
 
     const categoryMatch = state.category === "Все" || product.category === state.category;
-    const brandMatch = !state.brand || product.brands.includes(state.brand);
+    const brandMatch =
+      !state.brand || product.brands.includes(state.brand) || product.brands.includes("Все марки");
     const queryMatch = !query || text.includes(query);
     return categoryMatch && brandMatch && queryMatch;
   };

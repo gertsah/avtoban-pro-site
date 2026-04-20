@@ -587,6 +587,65 @@ h3 {
   border-radius: var(--radius);
 }
 
+.brand-catalog {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--dark);
+  border-radius: var(--radius);
+}
+
+.brand-catalog h3 {
+  margin-bottom: 6px;
+}
+
+.brand-catalog p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.make-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
+}
+
+.make-card {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 122px;
+  padding: 10px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.make-card:hover,
+.make-card.is-active {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px rgba(14, 51, 101, 0.14);
+}
+
+.make-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.make-card span {
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
 .catalog-toolbar p {
   margin: 0;
 }
