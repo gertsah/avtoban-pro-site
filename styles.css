@@ -1,16 +1,19 @@
 :root {
   color-scheme: light;
-  --ink: #111216;
-  --muted: #6a7079;
-  --paper: #f5f3ee;
+  --ink: #243238;
+  --muted: #64717c;
+  --paper: #f4f6f8;
   --panel: #ffffff;
-  --line: #ded8cf;
-  --dark: #17191d;
-  --dark-2: #25282e;
-  --accent: #e22922;
-  --accent-2: #ffb000;
+  --line: #d8e0e8;
+  --dark: #0e3365;
+  --dark-2: #113e7b;
+  --accent: #d80c24;
+  --accent-hover: #f00d28;
+  --accent-soft: #fbb5bd;
+  --accent-2: #0e3365;
+  --silver: #e0e0e0;
   --green: #20715d;
-  --shadow: 0 20px 60px rgba(17, 18, 22, 0.16);
+  --shadow: 0 20px 60px rgba(14, 51, 101, 0.16);
   --radius: 8px;
   --header-h: 76px;
 }
@@ -75,15 +78,15 @@ select {
   min-height: var(--header-h);
   padding: 12px clamp(16px, 4vw, 48px);
   color: #fff;
-  background: rgba(17, 18, 22, 0.78);
+  background: rgba(14, 51, 101, 0.84);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   transition: background 260ms ease, box-shadow 260ms ease;
 }
 
 .site-header.is-scrolled {
-  background: rgba(17, 18, 22, 0.94);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: rgba(14, 51, 101, 0.96);
+  box-shadow: 0 12px 30px rgba(14, 51, 101, 0.24);
 }
 
 .brand {
@@ -93,16 +96,12 @@ select {
   min-width: 0;
 }
 
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  color: #fff;
-  background: var(--accent);
-  border-radius: 6px;
-  font-weight: 900;
-  letter-spacing: 0;
+.brand__logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .brand strong,
@@ -112,7 +111,7 @@ select {
 }
 
 .brand small {
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 12px;
 }
 
@@ -170,7 +169,11 @@ select {
 .button--accent {
   color: #fff;
   background: var(--accent);
-  box-shadow: 0 12px 28px rgba(226, 41, 34, 0.28);
+  box-shadow: 0 12px 28px rgba(216, 12, 36, 0.28);
+}
+
+.button--accent:hover {
+  background: var(--accent-hover);
 }
 
 .button--dark {
@@ -239,8 +242,8 @@ select {
 
 .hero__shade {
   background:
-    linear-gradient(90deg, rgba(17, 18, 22, 0.9) 0%, rgba(17, 18, 22, 0.62) 42%, rgba(17, 18, 22, 0.28) 100%),
-    linear-gradient(0deg, rgba(17, 18, 22, 0.78), rgba(17, 18, 22, 0.18) 42%);
+    linear-gradient(90deg, rgba(14, 51, 101, 0.94) 0%, rgba(14, 51, 101, 0.68) 42%, rgba(14, 51, 101, 0.18) 100%),
+    linear-gradient(0deg, rgba(14, 51, 101, 0.7), rgba(14, 51, 101, 0.1) 46%);
 }
 
 .hero__content {
@@ -257,11 +260,29 @@ select {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--accent-2);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.section-heading .eyebrow,
+.gallery-intro .eyebrow,
+.contact-card .eyebrow,
+.request-drawer .eyebrow,
+.product-dialog .eyebrow,
+.admin-hero .eyebrow,
+.export-panel .eyebrow {
+  color: var(--accent);
+}
+
+.hero__brand-logo {
+  width: 196px;
+  height: auto;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
 }
 
 h1,
@@ -351,7 +372,7 @@ h3 {
   display: grid;
   gap: 16px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(14, 51, 101, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
   backdrop-filter: blur(18px);
@@ -429,7 +450,7 @@ h3 {
   top: var(--header-h);
   z-index: 20;
   padding: 12px 0;
-  background: rgba(245, 243, 238, 0.92);
+  background: rgba(244, 246, 248, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
 }
@@ -596,7 +617,7 @@ h3 {
 
 .product-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(226, 41, 34, 0.32);
+  border-color: rgba(216, 12, 36, 0.32);
   box-shadow: var(--shadow);
 }
 
@@ -629,7 +650,7 @@ h3 {
   max-width: calc(100% - 24px);
   padding: 6px 9px;
   color: #fff;
-  background: rgba(17, 18, 22, 0.76);
+  background: rgba(14, 51, 101, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 6px;
   font-size: 12px;
@@ -718,7 +739,7 @@ h3 {
 .flow-step span {
   display: inline-block;
   margin-bottom: 24px;
-  color: var(--accent-2);
+  color: #ffffff;
   font-weight: 900;
 }
 
@@ -1030,7 +1051,7 @@ code {
   gap: 16px;
   padding: 24px clamp(16px, 4vw, 48px);
   color: rgba(255, 255, 255, 0.66);
-  background: #0d0e11;
+  background: #081f3f;
 }
 
 .site-footer p {
@@ -1245,9 +1266,8 @@ code {
     display: none;
   }
 
-  .brand__mark {
-    width: 40px;
-    height: 40px;
+  .brand__logo {
+    width: 128px;
   }
 
   .header-actions .button {

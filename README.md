@@ -13,6 +13,11 @@
 
 ## Куда загружать фото
 
+Фирменные материалы уже перенесены со старого сайта:
+
+- `assets/img/brand/LogoAB.jpg` - старый логотип «Автобан».
+- `assets/img/old-slides/slide-390464.jpg` ... `slide-390470.jpg` - старые слайды с `avtoban.pro`.
+
 Главный экран:
 
 - `assets/img/hero/storefront.webp` - фасад / вход в магазин.

@@ -16,25 +16,46 @@ window.AUTOBAN_SITE = {
 
   heroSlides: [
     {
-      title: "Фасад магазина",
-      note: "Замените на фото входа: assets/img/hero/storefront.webp",
-      image: "assets/img/hero/storefront.webp",
-      fallback:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=82"
+      title: "Mercedes-Benz",
+      note: "Оригинальный слайд Mercedes-Benz",
+      image: "assets/img/old-slides/slide-390464.jpg",
+      fallback: "https://f.nodacdn.net/390464"
     },
     {
-      title: "Склад и наличие",
-      note: "Замените на фото полок/склада: assets/img/hero/warehouse.webp",
-      image: "assets/img/hero/warehouse.webp",
-      fallback:
-        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=82"
+      title: "BMW",
+      note: "Оригинальный слайд BMW",
+      image: "assets/img/old-slides/slide-390465.jpg",
+      fallback: "https://f.nodacdn.net/390465"
     },
     {
-      title: "Выдача заказа",
-      note: "Замените на фото стойки выдачи: assets/img/hero/counter.webp",
-      image: "assets/img/hero/counter.webp",
-      fallback:
-        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1800&q=82"
+      title: "Volkswagen",
+      note: "Оригинальный слайд Volkswagen",
+      image: "assets/img/old-slides/slide-390466.jpg",
+      fallback: "https://f.nodacdn.net/390466"
+    },
+    {
+      title: "Audi",
+      note: "Оригинальный слайд Audi",
+      image: "assets/img/old-slides/slide-390467.jpg",
+      fallback: "https://f.nodacdn.net/390467"
+    },
+    {
+      title: "Opel",
+      note: "Оригинальный слайд Opel",
+      image: "assets/img/old-slides/slide-390468.jpg",
+      fallback: "https://f.nodacdn.net/390468"
+    },
+    {
+      title: "Toyota",
+      note: "Оригинальный слайд Toyota",
+      image: "assets/img/old-slides/slide-390469.jpg",
+      fallback: "https://f.nodacdn.net/390469"
+    },
+    {
+      title: "Ford",
+      note: "Оригинальный слайд Ford",
+      image: "assets/img/old-slides/slide-390470.jpg",
+      fallback: "https://f.nodacdn.net/390470"
     }
   ],
 
